@@ -45,5 +45,5 @@ function sshcode() {
   /usr/local/bin/code --folder-uri "vscode-remote://ssh-remote+$server$folderPath"
 
   # Connect via SSH
-  ssh $server
+  ssh $server -t "cd $folderPath && exec \$SHELL"
 }
